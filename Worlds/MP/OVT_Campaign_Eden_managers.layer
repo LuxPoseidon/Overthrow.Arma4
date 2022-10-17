@@ -2,7 +2,6 @@ SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
  components {
   NavmeshWorldComponent "{5584F30E67F617AD}" {
    NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
-    NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
    }
   }
  }
@@ -14,8 +13,15 @@ SCR_CameraManager SCR_CameraManager1 : "{33F9FD881E3700CC}Prefabs/World/Game/SCR
  DefaultViewAngles 5.1 -498.11 0
 }
 OVT_OverthrowGameMode OVT_OverthrowGameMode1 : "{4DC10DCB8BE06D32}Prefabs/GameMode/OVT_OverthrowGameMode.et" {
+ m_bAutoPlayerRespawn 0
 }
 SCR_FactionManager OVT_FactionManager : "{8C75D1206F85987D}Prefabs/GameMode/OVT_FactionManager.et" {
+ Factions {
+  OVT_Faction "{59B6F523ED575E71}" {
+   m_bIsPlayable 0
+  }
+ }
+ m_bCanChangeFactionsPlayable 0
 }
 RadioManagerEntity RadioManager : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
  coords 3201.473 0 11071.047
@@ -27,6 +33,14 @@ BasePreloadManager PreloadManager2 : "{104F8505FD1871EF}Prefabs/World/Game/Prelo
  PrefabsToPreload + {
   "{3A99A99836F6B3DC}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Unarmed.et" "{59929550D81A3045}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_GunDealer.et"
  }
+}
+GarbageManager GarbageManager : "{9B883A7D8EBB282A}Prefabs/MP/Managers/GarbageManager.et" {
+ coords 4476.98 5.027 11033.979
+ CollectorInterval 300
+ CharacterLifetime 1800
+ VehicleCollect 0
+ VehicleLifetime 1800
+ ItemLifetime 1800
 }
 SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutManager_Base.et" {
  m_aPlayerLoadouts {
