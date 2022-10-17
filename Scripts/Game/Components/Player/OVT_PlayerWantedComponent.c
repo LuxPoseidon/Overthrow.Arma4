@@ -11,7 +11,8 @@ class OVT_PlayerWantedComponent: OVT_Component
 	int m_iLastSeen;
 	
 	protected const int LAST_SEEN_MAX = 15;
-	protected const int WANTED_SYSTEM_FREQUENCY = 1000;
+	// 5 means each star 2-5 will go down in 5 minutes and the last in 20 min. Max time wanted 40 min.
+	protected const int WANTED_SYSTEM_FREQUENCY = 5;
 	
 	protected FactionAffiliationComponent m_Faction;
 	protected BaseWeaponManagerComponent m_Weapon;
@@ -81,7 +82,8 @@ class OVT_PlayerWantedComponent: OVT_Component
 		if(m_iWantedLevel > 0 && !m_bIsSeen)
 		{
 			m_iWantedTimer -= WANTED_SYSTEM_FREQUENCY;
-			//Print("Wanted timeout tick -1");
+			
+			//Print("Wanted timeout tick -1: " + m_iWantedTimer);
 			if(m_iWantedTimer <= 0)
 			{				
 				m_iWantedLevel -= 1;
